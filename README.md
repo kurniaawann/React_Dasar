@@ -45,3 +45,32 @@ export function HelloWorld(){
     )
 }
 ```
+
+# ![React Nested Component] <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+**hal ini memungkinkan kita membuat component di dalam component**
+
+```jsx
+export default function Container({children}){
+    return (
+        <div>
+            <h1>Kurniawan</h1>
+            {children}
+            <footer>
+                <p>2025 kurniawan</p>
+            </footer>
+        </div>
+    )
+}
+```
+
+```jsx
+createRoot(document.getElementById("root")).render(
+    <StrictMode>
+        <Container>
+            <HelloWorld/>
+            <HelloWorld/>
+        </Container>
+    </StrictMode>
+)
+```
