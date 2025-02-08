@@ -1,15 +1,15 @@
 export function HelloWorld(){
     return (
         <>
-            <HeaderhelloWorld />
+            <HeaderhelloWorld text="Gak Lupa"/>
             <ParagraphHelloWorld />
         </>
     )
 }
 
 
-function HeaderhelloWorld(){
-    const text = "Hello World";
+function HeaderhelloWorld({text = "ups lupa"}){
+    // const text = "Hello World";
     const style = {
         color: "red",
         backgroundColor: "yellow"
