@@ -1,8 +1,29 @@
-# React + Vite
+# ![React Props] <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- React Props (Properties) adalah cara untuk mengirim data dari satu komponen ke komponen lain, biasanya dari parent ke child
 
-Currently, two official plugins are available:
+```jsx
+function HeaderhelloWorld({text = "ups lupa"}){
+    // const text = "Hello World";
+    const style = {
+        color: "red",
+        backgroundColor: "yellow"
+    }
+    return (
+        <h1 style={style} >{text.toUpperCase()}</h1>
+    )
+}
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Kita bisa menambahkannya disini jika tidak kita tambahkan maka dia akan Menampilkan "ups Lupa"**
+
+```jsx
+export function HelloWorld(){
+    return (
+        <>
+            <HeaderhelloWorld text="Gak Lupa"/>
+            <ParagraphHelloWorld />
+        </>
+    )
+}
+```
