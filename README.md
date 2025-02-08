@@ -74,3 +74,127 @@ createRoot(document.getElementById("root")).render(
     </StrictMode>
 )
 ```
+
+# ![React Conditional] <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+**Seperti pada bahasa pemrograman pada umumnya ini untuk mengatur jika true melakukan apa dan jika false melakukan apa**
+
+**Todo.jsx**
+
+```jsx
+export default function Todo({text, isComplate}){
+    if (isComplate) {
+       return (
+        <li>
+            <del>
+                {text}
+            </del>
+        </li>
+       )
+    }else {
+        return (
+            <li>{text}</li>
+        )
+    }
+}
+```
+
+**TodoList.jsx**
+
+```jsx
+export default function TodoList(){
+    return (
+        <ul>
+            <Todo isComplate={false} text="Learn Html"/>
+            <Todo isComplate={true} text="Learn css"/>
+            <Todo isComplate={true} text="Learn javascript"/>
+            <Todo isComplate={false} text="Learn react js"/>
+        </ul>
+    )
+}
+```
+
+**main.jsx**
+
+```jsx
+createRoot(document.getElementById("root")).render(
+    <StrictMode>
+        <Container>
+            <HelloWorld/>
+            <TodoList/>
+        </Container>
+    </StrictMode>
+)
+```
+
+**Null Component**
+
+- Dimana ketika true kita megembalikan component dan jika false kita tidak mengembalikan apa apa
+
+```jsx
+export default function Todo({text, isComplate, isDeleted = false}){
+    if (isDeleted) {
+        return null
+    }
+    else if (isComplate) {
+       return (
+        <li>
+            <del>
+                {text}
+            </del>
+        </li>
+       )
+    }else {
+        return (
+            <li>{text}</li>
+        )
+    }
+}
+```
+
+```jsx
+import Todo from "./todo";
+
+export default function TodoList(){
+    return (
+        <ul>
+            <Todo isComplate={false} text="Learn Html" isDeleted={true}/>
+            <Todo isComplate={true} text="Learn css"/>
+            <Todo isComplate={true} text="Learn javascript"/>
+            <Todo isComplate={false} text="Learn react js"/>
+        </ul>
+    )
+}
+```
+
+**Ternary Operator**
+
+```jsx
+export default function Todo({text, isComplate, isDeleted = false}){
+    if (isDeleted) {
+        return null
+    }else{
+        return (
+            <li>
+                {isComplate ? <del>{text}</del> : text}
+            </li>
+        )
+    }
+}
+```
+
+**Logical And**
+
+```jsx
+export default function Todo({text, isComplate, isDeleted = false}){
+    if (isDeleted) {
+        return null
+    }else{
+        return (
+            <li>
+                {text} {isComplate && '(complate)'}
+            </li>
+        )
+    }
+}
+```
