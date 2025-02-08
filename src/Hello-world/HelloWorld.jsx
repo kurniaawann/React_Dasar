@@ -1,7 +1,10 @@
 export function HelloWorld(){
+    const props = {
+        text: 'Coba Sparated syntax'
+    }
     return (
         <>
-            <HeaderhelloWorld text="Gak Lupa"/>
+            <HeaderhelloWorld {...props}/>
             <ParagraphHelloWorld />
         </>
     )

@@ -27,3 +27,21 @@ export function HelloWorld(){
     )
 }
 ```
+
+# ![Sparated Syntax] <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+**Sparated Syntax agar lebih mempersingkat penulisan code**
+
+```jsx
+export function HelloWorld(){
+    const props = {
+        text: 'Coba Sparated syntax'
+    }
+    return (
+        <>
+            <HeaderhelloWorld {...props}/>
+            <ParagraphHelloWorld />
+        </>
+    )
+}
+```
