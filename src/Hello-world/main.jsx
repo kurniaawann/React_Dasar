@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import AlertButton from "../button/AllertButton";
+import ToolBar from "../button/ToolBar";
+import SearchForm from "../form/SearchForm";
 import Table from "../table/table";
 import TodoList from "../todo-list/TodoList";
 import Container from "./Container";
@@ -14,6 +16,11 @@ createRoot(document.getElementById("root")).render(
             <TodoList/>
             <Table/>
             <AlertButton text="testing"/>
+            <ToolBar onClick={(e)=> {
+                e.stopPropagation();
+                alert('test click toolbar')
+            }}/>
+            <SearchForm/>
         </Container>
     </StrictMode>
 )

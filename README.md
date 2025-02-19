@@ -278,4 +278,54 @@ export default function Table(){
 
 - Event handler di React adalah fungsi yang dieksekusi saat suatu event terjadi, seperti klik tombol atau input teks. Event handler biasanya ditulis sebagai fungsi dan diteruskan ke elemen JSX menggunakan sintaks camelCase,
 
+```jsx
+export default function AlertButton({text}){
+    function handleClick(){
+        alert("tombol di klik")
+    }
 
+    return (
+        <button onClick={handleClick}> {text} </button>
+    )
+}
+```
+
+# ![React Event Propagation], <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+- Penjelasan yang saya tangkap disini kadang di beberapa area kita mau agar bisa di klik, nah saat kita tidak menggunakan e.stopPropagation ketika kita melakukan klik nah nantinya alret sebelumnya ikut ke panggil jadi seperti 2 kali pemanggilan padahal kita hanya melakukan klik 1 kali
+
+```jsx
+export default function ToolBar({onClick}){
+    return (
+        <div onClick={onClick} style={{backgroundColor: "red"}} >
+            <button onClick={onClick} >frist</button>
+            <button onClick={onClick} >Seccound</button>
+        </div>
+    )
+}
+```
+
+```jsx
+<ToolBar onClick={(e)=> {
+                e.stopPropagation();
+                alert('test click toolbar')
+            }}/>
+```
+
+**Prevent Default**
+
+- event.preventDefault() adalah metode untuk mencegah perilaku default dari suatu event di browser.
+
+```jsx
+export default function SearchForm(){
+    return (
+        <form>
+            <input type="text"/>
+            <button onClick={(e) => {
+                e.preventDefault();
+                alert("mencari")
+            }}>Search</button>
+        </form>
+    )
+}
+```
