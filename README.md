@@ -198,3 +198,44 @@ export default function Todo({text, isComplate, isDeleted = false}){
     }
 }
 ```
+
+# ![React Collection Component] <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+- Di bandingan kita membuat tag satu satu seperti sebelumnya kita bisa meengginakan collection contoh nya seperti ini
+
+```jsx
+import Todo from "./todo";
+
+export default function TodoList(){
+    const data = [
+        {
+            text: "Learn Html",
+            isComplate: true
+        },
+        {
+            text: "Learn css",
+            isComplate: true
+        },
+        {
+            "text": "Learn js",
+            isComplate: false
+        },
+        {
+            "text": "Learn js",
+            isComplate: false
+        },
+    ]
+
+    const todos = data.map((todo, index) => {
+        return (
+            <Todo key={index} {...todo}/>
+        )
+    })
+
+    return (
+        <ul>
+           {todos}
+        </ul>
+    )
+}
+```
