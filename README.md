@@ -274,5 +274,8 @@ export default function Table(){
 
 - Pada kode di atas kita menambahkan id, ini di namakan pure function
 
+# ![React Event Handler], <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+- Event handler di React adalah fungsi yang dieksekusi saat suatu event terjadi, seperti klik tombol atau input teks. Event handler biasanya ditulis sebagai fungsi dan diteruskan ke elemen JSX menggunakan sintaks camelCase,
 
 
