@@ -239,3 +239,40 @@ export default function TodoList(){
     )
 }
 ```
+
+# ![React Pure Function], <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+- Pure Function adalah function yang tidak berubah, Hampir mirip dengan Pure Component
+
+```jsx
+
+export default function Row({id, text}){
+    return (
+        <tr>
+            <td>{id}</td>
+            <td>{text}</td>
+        </tr>
+    )
+}
+```
+```jsx
+import Row from "./row";
+
+export default function Table(){
+    return (
+        <table border= "1">
+            <tbody>
+                <Row id="1" text= "1"></Row>
+                <Row id="2" text= "2"></Row>
+                <Row id="3" text= "3"></Row>
+                <Row id="4" text= "4"></Row>
+            </tbody>
+        </table>
+    )
+}
+```
+
+- Pada kode di atas kita menambahkan id, ini di namakan pure function
+
+
+
