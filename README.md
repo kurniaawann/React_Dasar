@@ -372,3 +372,39 @@ createRoot(document.getElementById("root")).render(
     </StrictMode>
 )
 ```
+
+# ![React useState], <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+**useState**
+
+- Untuk membuat State, kita bisa menggunakan function useState(initial)
+
+- https://react.dev/reference/react/useState
+
+- Function useState akan mengembalikan array dengan dua nilai, pertama adalah      State-nya, dan kedua ada function untuk mengubah value di State tersebut
+
+- Component yang menggunakan State tersebut, secara otomatis akan
+
+```jsx
+import { useState } from "react";
+
+export default function Counter(){
+    let [counter, setCounter]= useState(0);
+
+    return (
+        <div>
+            <button onClick={
+                () => {
+                    setCounter(counter + 1);
+                }
+            }>Increment
+
+            </button>
+            
+            <h1>
+                {counter}
+            </h1>
+        </div>
+    )
+}
+```
