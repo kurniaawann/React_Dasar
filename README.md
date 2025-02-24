@@ -425,3 +425,68 @@ export default function Counter(){
 
 - Ketiga, menempatkan hasil render Component ke DOM (Document Object Model)
 
+# ![React Snapshot], <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+**Snapshot**
+
+- Variable State sekilas mungkin terlihat seperti variable JavaScript biasa
+
+- Tapi sebenarnya, State itu mirip seperti snapshot (kondisi saat itu). Mengubah nilai variable State tidak akan mengubah Snapshot, melainkan akan memicu render ulang untuk membuat Snapshot baru
+
+- Kita mungkin berpikir bahwa tampilan web berubah secara langsung karena response dari event yang dilakukan oleh pengguna, seperti klik tombol
+
+- Namun sebenarnya tidak seperti itu, kita sudah tahu di materi sebelumnya, ketika terjadi perubahan State, itu akan memicu render ulang, sehingga akan membuat Snapshot baru yang ditampilkan di layar
+
+**Ini adalah penggunaan yang salah**
+
+```jsx
+import { useState } from "react";
+
+export default function Counter(){
+    let [counter, setCounter]= useState(0);
+
+    return (
+        <div>
+            <button onClick={
+                () => {
+                    setCounter(counter + 1);
+                    setCounter(counter + 1);
+                    setCounter(counter + 1);
+                }
+            }>Increment
+
+            </button>
+            
+            <h1>
+                {counter}
+            </h1>
+        </div>
+    )
+}
+```
+
+**Ini adalah penggunaan yang benar**
+```jsx
+import { useState } from "react";
+
+export default function Counter(){
+    let [counter, setCounter]= useState(0);
+
+    return (
+        <div>
+            <button onClick={
+                () => {
+                    setCounter(counter + 3);
+                }
+            }>Increment
+
+            </button>
+            
+            <h1>
+                {counter}
+            </h1>
+        </div>
+    )
+}
+```
+
