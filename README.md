@@ -408,3 +408,20 @@ export default function Counter(){
     )
 }
 ```
+
+# ![React Render], <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+**Render**
+
+- Sebelum Component yang kita buat ditampilkan di layar, Component harus di-render oleh React
+
+- Oleh karena itu, kita perlu tahu bagaimana cara kerja proses React ini ketika menampilkan Component yang kita buat
+
+- Terdapat 3 tahapan proses menampilkan Component di React
+
+- Pertama, trigger (memicu) proses render
+
+- Kedua, melakukan proses render Component
+
+- Ketiga, menempatkan hasil render Component ke DOM (Document Object Model)
+
