@@ -329,3 +329,46 @@ export default function SearchForm(){
     )
 }
 ```
+
+# ![React Side Effect], <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" width="50">
+
+```jsx
+export function SayHelloForm(){
+
+    function handleClick(e){
+        e.preventDefault();
+        const name = document.getElementById("input_name").value
+        document.getElementById("text_hello").innerHTML = `Hello ${name}`
+    }
+
+    return (
+        <div>
+            <form action="">
+                <input id="input_name"/>
+                <button onClick={handleClick}></button>
+                <h1 id="text_hello">Hello World</h1>
+            </form>
+        </div>
+    )
+}
+```
+
+```jsx
+createRoot(document.getElementById("root")).render(
+    <StrictMode>
+        <Container>
+            <HelloWorld/>
+            <TodoList/>
+            <Table/>
+            <AlertButton text="testing"/>
+            <ToolBar onClick={(e)=> {
+                e.stopPropagation();
+                alert('test click toolbar')
+            }}/>
+            <SearchForm/>
+        </Container>
+        
+        <SayHelloForm/>
+    </StrictMode>
+)
+```

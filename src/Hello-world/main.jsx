@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import AlertButton from "../button/AllertButton";
 import ToolBar from "../button/ToolBar";
+import { SayHelloForm } from "../form/SayHelloForm";
 import SearchForm from "../form/SearchForm";
 import Table from "../table/table";
 import TodoList from "../todo-list/TodoList";
@@ -22,5 +23,7 @@ createRoot(document.getElementById("root")).render(
             }}/>
             <SearchForm/>
         </Container>
+        
+        <SayHelloForm/>
     </StrictMode>
 )
